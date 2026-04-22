@@ -22,7 +22,12 @@
 				'scope': 'profile',
 			}).then(() => {
 				gapi.auth2.getAuthInstance().isSignedIn.listen(onSignIn)
-			})
+			},
+				error => {
+					console.log('Failed to init GAPI client', error);
+					
+				}
+			)
 		}
 	</script>
 </body>
