@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>WA</title>
+</head>
+
+<body>
+	<h1>WA</h1>
+	<script src="https://apis.google.com/js/api.js"
+		onload="this.onload=function(){}; gapi.load('client:auth2', initClient)"
+		onreadystatechange="if(this.readyState === 'complete') this.onload();"></script>
+	<script>
+		function initClient() {
+			// 2. Initialize the JavaScript client library.
+			gapi.client.init({
+				'apiKey': 'AIzaSyCHaXBgtNUTEPdY-taaflGUR1A1Mv0IqeQ',
+				// Your API key will be automatically added to the Discovery Document URLs.
+				'discoveryDocs': ['https://people.googleapis.com/$discovery/rest'],
+				// clientId and scope are optional if auth is not required.
+				'clientId': '308943820976-1kbaehgaq9fnrind61jtphor2sr2m0g8.apps.googleusercontent.com',
+				'scope': 'profile',
+			}).then(() => {
+				gapi.auth2.getAuthInstance().isSignedIn.listen(onSignIn)
+			})
+		}
+	</script>
+</body>
+
+</html>
